@@ -1,0 +1,269 @@
+#include <stdio.h>
+
+    struct Carta {
+        char Estado[50];
+        char Codigo[4];
+        char Cidade[50];
+        unsigned long int Populacao;
+        float Area;
+        float PIB;
+        //pontos turísticos54
+        int PT;
+        //densidade populacional
+        float DP;
+        //PIB per capita
+        float PPC; 
+        float SP; 
+
+ };
+    int main() {
+        struct Carta carta1, carta2;
+
+        printf ("Cadastro da Carta 1 \n");
+
+            printf ("Digite o estado: \n");
+            fgets (carta1.Estado, 50, stdin);
+
+            printf ("Digite o Código da Carta: \n");
+            scanf ("%s", carta1.Codigo);
+
+            printf ("Digite a cidade: \n" );
+            scanf ("%s", carta1.Cidade);
+
+            printf("Digite a quantidade de pontos turísticos:\n");
+            scanf(" %d", &carta1.PT);
+
+            printf ("Digite a população: \n");
+            scanf (" %lu", &carta1.Populacao);
+
+            printf ("Digite a area (em KM²): \n ");
+            scanf (" %f", &carta1.Area);
+
+            printf("Digite o PIB:\n");
+            scanf(" %f", &carta1.PIB);
+            while (getchar() != '\n');
+                  
+            carta1.DP = carta1.Populacao / carta1.Area;
+            carta1.PPC = carta1.PIB / carta1.Populacao;
+
+
+            printf ("Carta 1 Cadastrada com sucesso!\n\n");
+            
+
+        printf ("Cadastro da Carta 2 \n");
+
+            printf ("Digite o estado: \n");
+            fgets (carta2.Estado, 50, stdin);
+
+            printf ("Digite o Código da Carta: \n");
+            scanf ("%s", carta2.Codigo);
+
+            printf ("Digite a cidade: \n" );
+            scanf ("%s", carta2.Cidade);
+
+            printf ("Digite a quantidade de pontos turisticos: \n");
+            scanf ("%d", &carta2.PT);
+
+            printf ("Digite a população: \n");
+            scanf ("%lu", &carta2.Populacao);
+
+            //float só aceita .
+            printf ("Digite a area (em KM²): \n ");
+            scanf (" %f", &carta2.Area);
+
+            printf ("Digite o PIB: \n");
+            scanf  (" %f", &carta2.PIB);
+
+            carta2.DP = carta2.Populacao / carta2.Area;
+            carta2.PPC = carta2.PIB / carta2.Populacao;
+
+            printf ("Carta 2 Cadastrada com sucesso!\n\n");
+    
+        
+
+    printf ("\n Carta 1 \n");
+
+        printf ("Estado: %s\n", carta1.Estado);
+        printf ("Código da carta: %s\n", carta1.Codigo);
+        printf ("Cidade: %s\n", carta1.Cidade);
+        printf ("População: %lu\n", carta1.Populacao);
+        printf ("Area: %f\n", carta1.Area);
+        printf ("PIB: %f\n", carta1.PIB);
+        printf ("Pontos Turisticos: %d\n", carta1.PT);
+        printf ("Densidade Populacional: %f\n", carta1.DP);
+        printf ("PIB per Capita: %f\n", carta1.PPC);
+
+    printf ("\n Carta 2 \n");
+
+        printf ("Estado: %s\n", carta2.Estado);
+        printf ("Código da carta: %s\n", carta2.Codigo);
+        printf ("Cidade: %s\n", carta2.Cidade);
+        printf ("População: %lu\n", carta2.Populacao);
+        printf ("Area: %f\n", carta2.Area);
+        printf ("PIB: %f\n", carta2.PIB);
+        printf ("Pontos Turisticos: %d\n", carta2.PT);
+        printf ("Densidade Populacional: %f\n", carta2.DP);
+        printf ("PIB per Capita: %f\n", carta2.PPC);
+
+        while (getchar() != '\n');
+
+    int opcao1, opcao2;
+    float c1valor1, c1valor2, c2valor1, c2valor2;
+    
+
+        printf ("\n Selecione a primeira característica que deseja comparar \n");
+        printf ("1. População \n");
+        printf ("2. Area \n");
+        printf ("3. PIB \n");
+        printf ("4. Pontos Turisticos \n");
+        printf ("5. Densidade Populacional \n");
+        scanf ("%d", &opcao1 );
+
+ 
+        printf ("\n Selecione a segunda característica que deseja comparar \n");
+       
+        if (opcao1 != 1) printf ("1. População \n");
+        if (opcao1 != 2) printf ("2. Area \n");
+        if (opcao1 != 3) printf ("3. PIB \n");
+        if (opcao1 != 4) printf ("4. Pontos Turisticos \n");
+        if (opcao1 != 5) printf ("5. Densidade Populacional \n");
+        scanf ("%d", &opcao2 );
+
+        
+        if (opcao2 == opcao1)
+        printf("Atributo repetido! Escolha um diferente.\n");
+    
+        
+       switch (opcao1){
+            case 1: 
+                c1valor1 = carta1.Populacao;
+
+        break;
+            case 2: 
+                c1valor1 = carta1.Area;
+
+        break;
+            case 3: 
+                c1valor1 = carta1.PIB;
+
+        break;
+            case 4: 
+                c1valor1 = carta1.PT;
+
+        break;
+            case 5: 
+                c1valor1 = carta1.DP;
+
+        break;
+       
+       default:
+            printf("\n Opção inválida. Tente novamente.\n");
+        break;
+       } 
+        
+
+
+       switch (opcao2){
+            case 1: 
+                c1valor2 = carta1.Populacao;
+
+        break;
+            case 2: 
+                c1valor2 = carta1.Area;
+
+        break;
+            case 3: 
+                c1valor2 = carta1.PIB;
+
+        break;
+            case 4: 
+                c1valor2 = carta1.PT;
+
+        break;
+            case 5: 
+                c1valor2 = carta1.DP;
+
+        break;
+       
+       default:
+            printf("\n Opção inválida. Tente novamente.\n");
+        break;
+       } 
+        
+        
+        switch (opcao1){
+            case 1: 
+                c2valor1 = carta2.Populacao;
+
+        break;
+            case 2: 
+                c2valor1 = carta2.Area;
+
+        break;
+            case 3: 
+                c2valor1 = carta2.PIB;
+
+        break;
+            case 4: 
+                c2valor1 = carta2.PT;
+
+        break;
+            case 5: 
+                c2valor1 = carta2.DP;
+
+        break;
+       
+       default:
+            printf("\n Opção inválida. Tente novamente.\n");
+        break;
+       } 
+        
+
+
+       switch (opcao2){
+            case 1: 
+                c2valor2 = carta2.Populacao;
+
+        break;
+            case 2: 
+                c2valor2 = carta2.Area;
+
+        break;
+            case 3: 
+                c2valor2 = carta2.PIB;
+
+        break;
+            case 4: 
+                c2valor2 = carta2.PT;
+
+        break;
+            case 5: 
+                c2valor2 = carta2.DP;
+
+        break;
+       
+       default:
+            printf("\n Opção inválida. Tente novamente.\n");
+        break;
+       } 
+        
+       
+       float resultado1 = c1valor1 + c1valor2;
+       float resultado2 = c2valor1 + c2valor2;
+       int resultadoDP = (opcao1 == 5 || opcao2 == 5);
+       
+       
+
+       printf ("\n Resultado da Batalha das Cartas! \n");
+       printf ("\n Estados: %s VS %s", carta1.Estado, carta2.Estado);
+       printf ("\n Atributos escolhido: %d e %d", opcao1, opcao2);
+       printf ("\n Valores da primeira carta: %d: %f e %d: %f",opcao1, c1valor1, opcao2, c1valor2);
+       printf ("\n Valores da segunda carta: %d: %f e %d: %f", opcao1, c2valor1, opcao2, c2valor2);
+       printf ("\n Resultado dos Valores somados: %f VS %f", resultado1, resultado2);
+
+       char* resultadofinal = (resultado1 == resultado2) ? "Empate!": (resultadoDP ? (resultado1 < resultado2 ? "Carta 1 venceu!" : "Carta 2 venceu!"):
+    (resultado1 > resultado2 ? "Carta 1 venceu!" : "Carta 2 venceu!"));
+
+
+    printf ("\n Resultado: %s\n",  resultadofinal);
+       
